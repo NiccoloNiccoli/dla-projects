@@ -15,7 +15,7 @@ import models as m
 import argparse
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="TBD")
+    parser = argparse.ArgumentParser(description="Lab 1 of Deep Learning Applications: Exercise 1")
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
     parser.add_argument("--batch_size", type=int, default=128, help="Batch size for training")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate for training")

@@ -47,11 +47,33 @@ class FullyConvolutionalNN(nn.Module):
 
         self.pool = nn.MaxPool2d(2, 2)
 
-        self.head = nn.Conv2d(hidden_dim*8, output_channels, 1,  stride  = 1, padding=0)
+        self.head = nn.Conv2d(hidden_dim*4, output_channels, 1,  stride  = 1, padding=0)
 
     def forward(self, x):
         x = self.pool(F.leaky_relu(self.conv1(x)))
         x = self.pool(F.leaky_relu(self.conv2(x)))
         x = self.pool(F.leaky_relu(self.conv3(x)))
+        x = self.head(x)
+        return x
+    
+class NonSizeDependentCNN(nn.Module):
+    def __init__(self, input_channels, output_dim):
+        super().__init__()
+        hidden_dim = 64
+        self.conv1 = nn.Conv2d(input_channels, hidden_dim, 3, stride = 1, padding=1)
+        self.conv2 = nn.Conv2d(hidden_dim, hidden_dim * 2, 3, stride = 1,  padding=1)
+        self.conv3 = nn.Conv2d(hidden_dim * 2, hidden_dim * 4, 3, stride = 1,  padding=1)
+
+        self.pool = nn.MaxPool2d(2, 2)
+
+        self.gap = nn.AdaptiveAvgPool2d(1)
+
+        self.head = nn.Linear(hidden_dim*4, output_dim)
+    def forward(self, x):
+        x = self.pool(F.leaky_relu(self.conv1(x)))
+        x = self.pool(F.leaky_relu(self.conv2(x)))
+        x = self.pool(F.leaky_relu(self.conv3(x)))
+        x = self.gap(x)
+        x = x.view(x.size(0), -1)
         x = self.head(x)
         return x
