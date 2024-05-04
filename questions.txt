@@ -1,0 +1,7 @@
+Which, among these, is the country where people eat more pasta?
+0: Italy
+1: France
+2: Mexico
+Correct answer: Italy
+
+
