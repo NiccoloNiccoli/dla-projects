@@ -14,12 +14,12 @@ The CNN has 4 convolutional layers and the classification head is made by just 2
 
 These models are implemented in `models.py`.
 
-The models' settings (namely the input size / channel number and classification head input size) changes between the two datasets.
+The models' settings (namely the input size / channel number and classification head input size) change between the two datasets.
 
 We trained each model for 10 epochs with a batch size of 128. The optimizer we used is AdamW with a learning rate of 1e-3.
 
 ### Results
-We collected the train losses, the validation accuracies and the test accuracies (after the 10 epochs of training).
+We collected the train losses, the validation accuracies and the test accuracies.
 
 #### MNIST
 ![Train Loss MLP MNIST](../images/Lab1/train_loss_Basic%20MLP_MNIST.png)
