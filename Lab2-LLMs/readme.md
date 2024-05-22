@@ -23,7 +23,7 @@ After the training we generated some text. Here there is a passage:
 
 The rest of the generated text is in `output_dante.txt`.
 
-This passage shows us that the model we trained is capable of generating an Old Italian-looking text (even though without any sense) in just 30 minutes of training. Probably using a larger corpus would have produced better results.
+This passage shows us that the model we trained is capable of generating an Old Italian-looking text (even though without any sense) in just 30 minutes of training. Probably using a larger corpus would produce better results.
 
 ## Experiment 2
 In this experiment we compared the length of input with the encoded sequence length. For this experiment we used GPT2 from HuggingFace.
