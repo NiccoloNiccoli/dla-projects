@@ -1,3 +1,4 @@
+# Exercise 2.2
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, set_seed
 import argparse
 
