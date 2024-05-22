@@ -70,7 +70,7 @@ We tested the model in three different settings:
 
 We ran 1 epoch of training / fine-tuning.
 
-The results show that not training the head the model basically give a random answer every time, while training the head or fine-tuning the model the predictions are more accurate.
+The results show that the model basically gives a random answer every time not training the head, while  the predictions are more accurate training the head or fine-tuning the model.
 | Strategy | Accuracy |
 |--|--|
 | No training | 0.49 |
@@ -86,7 +86,7 @@ We trained the model for 3 epochs.
 The code is in `multiple_choice_answer.py`.
 We made the model print in a text file the question we asked, the choices and the correct answer.
 
-All the questions we made to the model are in `questions.txt`.
+All the questions we asked the model are in `questions.txt`.
 
 An example of this interaction between us and the model is the following:
 > Which, among these, is the country where people eat more pasta?<br>• Italy<br>• France<br>• Mexico<br>Correct answer: Italy
