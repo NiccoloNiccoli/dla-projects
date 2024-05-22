@@ -43,7 +43,7 @@ While on MNIST the MLPs manage to obtain low loss values (because the dataset is
 ![Val accuracy CNN CIFAR10](../images/Lab1/val_accuracy_CNN_CIFAR10.png)
 Also from these plots we can see that the CNN performs much better than the MLPs (the CNN scores almost 20 points more than the non-convolutional models).
 
-#### Test accuracY
+#### Test accuracy
 | Model       | MNIST    | CIFAR 10 |
 |-------------|----------|----------|
 | Basic MLP   | 0.98     | 0.53     |
