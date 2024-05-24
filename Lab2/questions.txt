@@ -1,0 +1,31 @@
+Which, among these, is the country where people eat more pasta?
+0: Italy
+1: France
+2: Mexico
+Correct answer: Italy
+
+Which videogame is the most sold one?
+0: Minecraft
+1: Pac-man
+2: GTA5
+Correct answer: Minecraft
+
+Who was the first Roman Emperor? 
+0: Augustus
+1: Constantine
+2: Nero
+Correct answer: Augustus
+
+In which year was the paper 'Deep Residual Learning for Image Recognition' presented? 
+0: 2008
+1: 2012
+2: 2015
+3: 2020
+Correct answer: 2008
+
+Who was the first man to land on the moon?
+0: Neil Armstrong
+1: Louis Armstrong
+2: Yuri Gagarin
+Correct answer: Neil Armstrong
+
