@@ -52,16 +52,23 @@ Here there are some lines from the output:
 |Prompt| *He was a boy, she was a girl*|
 |Base output| *He was a boy, she was a girl, she was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl. She was a girl*|
 | Do_sample = True, temperature = 0.5| *He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. She was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl. He was a boy, she was a girl* |
-| Do_sample = True, temperature = 0.5, no_repeat_ngrams = 2 | *He was a boy, she was a girl. He was in the middle of the night, he was having a hard time sleeping. I was there, I saw him. <br> "I said, 'You are not going to help me, your mother is not gonna help you.' He said he would, but he said no, and he didn't want to. And I said to him, you know, if I could help him this way, that's what I would do. But he did not want me to do it.* |
+| Do_sample = True, temperature = 1.0| *He was a boy, she was a girl. Then I realized you can't help but love that character, and I didn't want to give back. I wanted to tell my story so I could be heard."<br><br>A spokesman for the girl group later told The Post that while she initially thought the incident was over, she was "still haunted."<br><br>"I was there in the dark at midnight that day and I was so excited," she said.<br><br>Sophie Fazell also left the group. "I never* |
+| Do_sample = True, temperature = 0.1, no_repeat_ngram = 2 | *He was a boy, she was a girl, and she had a lot of problems. She was very, very depressed. I think she would have been a good mother to her child.<br><br>"I think that's why she's so happy. It's because she has a great heart. And she loves her children. So she doesn't have to worry about them. But she does have a problem with her own children."* |
+| Do_sample = True, temperature = 0.5, no_repeat_ngrams = 2 | *He was a boy, she was a girl. He was in the middle of the night, he was having a hard time sleeping. I was there, I saw him. <br><br> "I said, 'You are not going to help me, your mother is not gonna help you.' He said he would, but he said no, and he didn't want to. And I said to him, you know, if I could help him this way, that's what I would do. But he did not want me to do it.* |
+| Do_sample = True, temperature = 1.0, no_repeat_ngrams = 2 | *He was a boy, she was a girl. Then I realized you can't help but love that character, and I didn't want to give back. I wanted to tell my story so I could be heard."<br><br>A spokesman for the girl group later told The Post that while she initially thought the incident was over, her friends, sisters and co-spouses began calling her in the days following the accident with a series of threatening letters.* |
 
-From this experiment we see that to get a "good" output it is crucial to set a high (>=1) temperature or to set `no_repeat_ngrams` to at least 2.
+From this experiment we see that to get a "realistic" output it is crucial to set `no_repeat_ngrams` to at least 2. The higher the temperature, the more *creative* the model is.
+
+We think that the best result is obtained with `temperature = 0.1`.
 
 ## Experiment 4
 In this experiment we used a pretrained BERT (as backbone) to make a text classifier.
 
+The code is in `text_classifier.py`.
+
 The model uses BERT as backbone and two fully connected layers (with a ReLU) as classification head.
 
-We trained the model on IMBD dataset.
+We trained the model to classify if a review is positive or negative on IMBD dataset.
 
 We tested the model in three different settings:
 - not training the head
@@ -77,6 +84,8 @@ The results show that the model basically gives a random answer every time not t
 | Training the head | 0.85 |
 | Fine-tuning the model | **0.92** |
 
+This table shows the importance of fine-tuning a model.
+
 ## Experiment 5
 In the last experiment of this session we trained a question answering model.
 
@@ -86,11 +95,15 @@ We trained the model for 3 epochs.
 The code is in `multiple_choice_answer.py`.
 We made the model print in a text file the question we asked, the choices and the correct answer.
 
+To run the code that train the model you need to use the parameter `--train`.
+
+To run the code that answers your question you must use the parameters `--model-path /path/to/model`, `--prompt "Write here the question"` and `--answers "Choice 1" "Choice 2"`. You can add all the choices you like. We tested up to 4 choices.
+
 All the questions we asked the model are in `questions.txt`.
 
 An example of this interaction between us and the model is the following:
 > Which, among these, is the country where people eat more pasta?<br>• Italy<br>• France<br>• Mexico<br>Correct answer: Italy
 
-We don't know if the answer is correct but we like to think it is.
+We don't know if the answer is correct but probably it is.
 
 

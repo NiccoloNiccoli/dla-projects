@@ -75,7 +75,8 @@ The model is made in such a way that it splits the image in patches and for each
 This way to do the prediction has an obvious drawback: its accuracy is very low because the model predicts a label even for "empty" patches.
 
 However, if we look at how the predictions are distributed over the image we can see that near the numbers the predictions are correct. We think that a behaviour like that is an indicator of the correctness of the method.
-![](../images/Lab1/prediction.png) ![](../images/Lab1/prediction_1.png)
+![](../images/Lab1/prediction.png) | ![](../images/Lab1/prediction_1.png)
+|:--:|:--:|
 
 ## Experiment 3
 In this third experiment we studied the performance of a CNN that does not depend on the input size.

@@ -74,7 +74,8 @@ As these plots show, we ran 5000 episodes but the training was very noisy and it
 Our hypotesis about this failure is that the REINFORCE algorithm is not strong enough to make the agent learn how to solve the environment.
 For this reason we tried to solve that environment with a more powerful technique in [Experiment 4](#experiment-4).
 
-Here there is a GIF of our agent trying to land correctly:
+Here there is a GIF of our agent trying to land:
+
 ![Example of episode on LunarLander](../images/Lab3/Ex3/lunar_lander.gif)
 
 ## Experiment 4
@@ -142,4 +143,4 @@ We used the RGB observation space.
 The mean reward is quite bouncy and the agent does not learn how to complete the game. 
 However, it still manages to reach the end of the pond once.
 
-<source src="../images/lab3/Ex6/ppo_froggers_3000000.gif" alt="Frogger" width="480" height="630">
+![Frogger](../images/Lab3/Ex6/ppo_froggers_3000000.gif)
