@@ -58,6 +58,6 @@ def generate_from_prompt(prompt, max_new_tokens = 50, seed = 42):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("text", type=str)
+    parser.add_argument("text", type=str, help="Prompt text to generate from")
     parser = parser.parse_args()
     generate_from_prompt(parser.text, max_new_tokens=100)
